@@ -1,0 +1,42 @@
+.feels {
+    margin-top: 83%;
+    height: 110px;
+}
+
+.anger {
+    background: url('../img/sentimientos/enojo.svg');
+}
+
+.sad {
+    background: url('../img/sentimientos/tristeza.svg');
+}
+
+.stress {
+    background: url('../img/sentimientos/estres.svg');
+}
+
+.fear {
+    background: url('../img/sentimientos/miedo.svg');
+}
+
+.feel {
+    width: 70%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.feel_item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feel_text {
+    font-family: "Open Sans light";
+    color: #fff;
+    font-size: 20px;
+}
