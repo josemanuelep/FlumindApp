@@ -1,49 +1,187 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/animated.css">
+        <link rel="stylesheet" href="css/globalStyles.css">
+        <link rel="stylesheet" href="css/logoAnimation.css">
+        <link rel="stylesheet" href="css/mainPage.css">
+        <link rel="stylesheet" href="css/feelPage.css">
+        <link rel="stylesheet" href="css/activitysPage.css">
+        <title>Flumind</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        
+        <div class="page">
+            <div class="page entry">            
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+                <div class="circle circle3"></div>
+                <div class="circle circle4"></div>
+                <div class="circle circle5"></div>
+                <h1 id="flumind_text">Flumind</h1>
+            </div>
+
+            <div class="page hidden">
+                
+                <div id="main_abstract" class="abstract hidden"></div>
+
+                <div class="main_element hidden"></div>
+
+                <h2 class="main_element hidden">Bienvenido a flumind</h2>
+                <p class="main_element hidden">Selecciona una opción y comienza tu proceso a la tranquilidad</p>
+
+                <div class="main_element hidden">
+                    <div class="option">
+                        <h1 class="second_title">Actividades</h1>
+                        <p class="desc">Controla tus sentimientos<br>¡ahora!</p>
+                        <div id="button_activitys" class="button">
+                            <p class="button_text">Empezar</p>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <h1 class="second_title">Seguimiento diario</h1>
+                        <p class="desc">Crea hábitos para tu día a día</p>
+                        <div class="button">
+                            <p class="button_text">Empezar</p>
+                        </div>
+                    </div>  
+                </div>
+
+            </div>
+
+            
+
+            <div class="page hidden">
+                
+                <div class="abstract abstract1"></div>
+
+                <h2 class="main_title">¿Cómo te sientes hoy?</h2>
+
+                <div class="options feels">
+                    <div class="feel_item">
+                        <div class="feel anger"></div>
+                        <p class="feel_text">Enojo</p>
+                    </div>
+                    <div class="feel_item">
+                        <div class="feel sad"></div>
+                        <p class="feel_text">Tristeza</p>
+                    </div>
+                    <div class="feel_item">
+                        <div class="feel stress"></div>
+                        <p class="feel_text">Estrés</p>
+                    </div>
+                    <div class="feel_item">
+                        <div class="feel fear"></div>
+                        <p class="feel_text">Miedo</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="page hidden">
+                
+                <div class="abstract abstract2"></div>
+
+                <h2 class="main_title">Actividades</h2>     
+                <div class="main_activity_icon">
+                    <div id="feel_selected" class="feel_selected"></div>
+                </div>           
+                <p class="activity_desc desc">Selecciona una actividad dependiendo de tu tiempo y disposición</p>
+
+                <div class="options">
+                    <div class="option">
+                        <h1 class="second_title">Respiración</h1>
+                        <div class="activity_icon breathing"></div>
+                        <div id="button_activitys" class="button">
+                            <p class="button_text">Entrar</p>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <h1 class="second_title">Actividad física</h1>
+                        <div class="activity_icon physicals"></div>
+                        <div id="button_activitys" class="button">
+                            <p class="button_text">Entrar</p>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <h1 class="second_title">Artísticas</h1>
+                        <div class="activity_icon artistics"></div>
+                        <div id="button_activitys" class="button">
+                            <p class="button_text">Entrar</p>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <h1 class="second_title">Consejos</h1>
+                        <div class="activity_icon tips"></div>
+                        <div id="button_activitys" class="button">
+                            <p class="button_text">Entrar</p>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+
+            <div class="page hidden">
+                
+                <div class="abstract abstract1"></div>
+
+                <h2 class="main_title">Musica</h2>
+
+            </div>
+
+            <div class="page hidden">
+                
+                <div class="abstract abstract1"></div>
+
+                <h2 class="main_title">Cronometro</h2>
+
+            </div>
+
+            <div class="page hidden">
+                
+                <div class="abstract abstract1"></div>
+
+                <h2 class="main_title">Contacto profesional</h2>
+
+            </div>
+
+            <div id="buttonMenu" class="hidden"></div>
+
+            <div id="tabs" class="tabs hidden">
+                <div id="curved" class="curved curved_home"></div>
+                <div class="tab tab1_actived"></div>
+                <div class="tab tab2"></div>
+                <div class="tab tab3"></div>
+                <div class="tab tab4"></div>
+            </div>
+
+            <div id="opaque" class="hidden"></div>
+
+            <div id="menu" class="page menu">
+                <div id="closeIcon" class="close_icon"></div>
+                <div class="menu_contain">                    
+                    <div class="menu_item">
+                        <div class="contact_icon"></div>
+                        <p class="menu_text">Contacto</p>
+                    </div>
+                    <div class="menu_item">
+                        <div class="info_icon"></div>
+                        <p class="menu_text">Información</p>
+                    </div>
+                </div>
             </div>
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/logoAnimation.js"></script>
+        <script src="js/navegation.js"></script>
+        <script src="js/mainPage.js"></script>
+        <script src="js/feelPage.js"></script>
+        <script src="js/activitysPage.js"></script>
     </body>
 </html>
