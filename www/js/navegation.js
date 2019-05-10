@@ -111,14 +111,13 @@ function showPage(index){
 
 function changedTab(index){
     pages[index].style.zIndex = '1';
-    pages[index].className = "page animated slideInUp delay-300ms";
-    /* if(tabActivated == 0){
+    if(tabActivated != -1){
         pages[index].className = "page animated slideInUp delay-300ms";
     }else{
         setTimeout(function(){
             pages[index].className = "page animated slideInUp delay-300ms";
-        }, 650);
-    } */
+        }, 500);
+    }
     curved.className = "curved curved_home animated fadeOut";
     cleanTabs();
 }

@@ -103,19 +103,20 @@ function closeMenu(){
 
 function showPage(index){
     route.push(index);
-    pages[index].className = "page animated bounceInRight";   
+    pages[index].className = "page animated slideInRight delay-300ms";   
     curved.className = "curved curved_home animated fadeOut"; 
     cleanTabs();
     tabActivated = -1;
 }
 
 function changedTab(index){
-    if(tabActivated == 0){
-        pages[index].className = "page animated slideInUp";
+    pages[index].style.zIndex = '1';
+    if(tabActivated != -1){
+        pages[index].className = "page animated slideInUp delay-300ms";
     }else{
         setTimeout(function(){
-            pages[index].className = "page animated slideInUp";
-        }, 650);
+            pages[index].className = "page animated slideInUp delay-300ms";
+        }, 500);
     }
     curved.className = "curved curved_home animated fadeOut";
     cleanTabs();
@@ -138,11 +139,12 @@ function cleanTabs(){
 function cleanPages(){
     if(tabActivated == -1){
         for(let i = 0; i < route.length; i++){
-            pages[route[i]].className = "page animated slideOutRight";
+            pages[route[i]].className = "page animated slideOutRight delay-300ms";
         }
         route = [];
     }else {
-        for(let i = 5; i < 5 + tabActivated; i++){
+        for(let i = 5; i < 5 + tabActivated ; i++){   
+            pages[i].style.zIndex = '0';        
             pages[i].className = "page animated slideOutDown";
         }
     }
