@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/globalStyles.css">
         <link rel="stylesheet" href="css/logoAnimation.css">
         <link rel="stylesheet" href="css/mainPage.css">
+        <link rel="stylesheet" href="css/musicPage.css">
         <link rel="stylesheet" href="css/feelPage.css">
         <link rel="stylesheet" href="css/activitysPage.css">
         <title>Flumind</title>
@@ -35,19 +36,13 @@
                 <p class="main_element hidden">Selecciona una opción y comienza tu proceso a la tranquilidad</p>
 
                 <div class="main_element hidden">
-                    <div class="option">
+                    <div id="button_activitys" class="option">
                         <h1 class="second_title">Actividades</h1>
                         <p class="desc">Controla tus sentimientos<br>¡ahora!</p>
-                        <div id="button_activitys" class="button">
-                            <p class="button_text">Empezar</p>
-                        </div>
                     </div>
                     <div class="option">
                         <h1 class="second_title">Seguimiento diario</h1>
                         <p class="desc">Crea hábitos para tu día a día</p>
-                        <div class="button">
-                            <p class="button_text">Empezar</p>
-                        </div>
                     </div>  
                 </div>
 
@@ -126,8 +121,25 @@
             <div class="page hidden">
                 
                 <div class="abstract abstract1"></div>
-
                 <h2 class="main_title">Musica</h2>
+
+                <div class="player">
+
+                    <div class="music_picture"></div>
+                    <p class="music_title">Titulo de la música</p>
+                    <p class="music_artist">Artista de la música</p>
+                    <div class="progress_container">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="music_buttons_container">
+                        <div class="music_buttons">
+                            <div id="music_previous" class="music_button"></div>
+                            <div id="music_play" class="music_button"></div>
+                            <div id="music_next" class="music_button"></div>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 

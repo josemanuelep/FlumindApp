@@ -1,9 +1,9 @@
-var player = new Howl({
-    src: ['musics/StarWars.mp3']
-});
+var player;
 
-function changeMusic(route){
-    player.stop();
+function putMusic(route){
+    if(player)
+        player.stop();
+    
     player = new Howl({
         src: [route]
     });

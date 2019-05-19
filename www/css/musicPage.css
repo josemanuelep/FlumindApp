@@ -1,0 +1,87 @@
+.player {
+    position: absolute;
+    margin-top: 57%;
+    width: 100%;
+    height: 51%;    
+    text-align: center;
+}
+
+.music_picture {
+    display: inline-block;
+    background: turquoise;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.music_title {
+    display: inline-block;
+    margin-top: 10px;
+    text-align: left;
+    font-family: "Open Sans regular";
+    font-size: 20px;
+    color: #fff;
+    width: 90%;
+}
+
+.music_artist {
+    display: inline-block;
+    text-align: left;
+    font-family: "Open Sans light";
+    font-size: 15px;
+    color: #ddd;
+    width: 90%;
+}
+
+.progress_container {
+    display: inline-block;
+    margin-top: 18px;
+    background: #ccc;
+    border-radius: 5px;
+    width: 91%;
+    height: 4px;
+}
+
+.progress {
+    background: hotpink;
+    border-radius: 5px;
+    width: 50%;
+    height: 4px;
+}
+
+.music_buttons_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 18%;
+}
+
+.music_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 65%;
+    height: 100%;
+}
+
+.music_button {
+    width: 50px;
+    height: 25px;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+}
+
+#music_previous {
+    background: url('../img/musica/atras.svg');
+}
+
+#music_play {
+    background: url('../img/musica/play.svg');
+    height: 40px;
+}
+
+#music_next {
+    background: url('../img/musica/adelante.svg');
+}

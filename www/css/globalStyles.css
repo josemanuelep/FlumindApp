@@ -217,19 +217,19 @@
 }
 
 .curved_home {
-    transform: translateX(-24%);
+    transform: translateX(-17%);
 }
 
 .curved_music {
-    transform: translateX(28%);
+    transform: translateX(45%);
 }
 
 .curved_time {
-    transform: translateX(79%);
+    transform: translateX(107.5%);
 }
 
 .curved_contact {
-    transform: translateX(130%);
+    transform: translateX(170%);
 }
 
 .tab {
@@ -247,7 +247,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 200px;
+    top: -4%;
+    width: 40%;
     height: 45px;
     transition: all .3s ease;
 }
