@@ -217,19 +217,19 @@
 }
 
 .curved_home {
-    transform: translateX(23%);
+    transform: translateX(-24%);
 }
 
 .curved_music {
-    transform: translateX(175%);
+    transform: translateX(28%);
 }
 
 .curved_time {
-    transform: translateX(316%);
+    transform: translateX(79%);
 }
 
 .curved_contact {
-    transform: translateX(465%);
+    transform: translateX(130%);
 }
 
 .tab {
@@ -242,13 +242,14 @@
 }
 
 .curved {
-    position: absolute;
-    width: 17%;
-    height: 50px;
-    border-radius: 100%;
-    top: -40%;
-    background: #363553;
-    transition: all .3s ease;    
+    position: absolute; 
+    background: url(../img/tabs/curvamenu.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 45px;
+    transition: all .3s ease;
 }
 
 .hidden {
