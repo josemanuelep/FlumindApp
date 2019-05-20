@@ -26,6 +26,7 @@ function initVariable() {
     closeIcon = document.getElementById("closeIcon");
     pageOpaque = document.getElementById("opaque");
     initFeels();
+    initPlayer();
 }
 
 function assingEvents(){
@@ -75,6 +76,7 @@ function assingEvents(){
     });
 
     assingMainOptions();
+    assingPlayerButtons();
     assingFeels();
 }
 

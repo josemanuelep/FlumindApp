@@ -121,21 +121,54 @@
             <div class="page hidden">
                 
                 <div class="abstract abstract1"></div>
-                <h2 class="main_title">Musica</h2>
+                <h2 class="main_title">Música</h2>
 
-                <div class="player">
+                <div class="music_container">
+                    <div class="musics">
+                        <div class="music_item">
+                            <p class="music_title">Titulo</p>
+                            <p class="music_title">Artísta</p>
+                            <p class="music_title">Álbum <div class="button_play icon_hidden"></div></p>
+                        </div>
+                        <div class="music_list">
+                            <div class="music_item">
+                                <p class="music_des">Debút</p>
+                                <p class="music_des">Mélanie Laurent</p>
+                                <p class="music_des">En t'attendant <div class="button_play"></div></p>
+                            </div>
+                            <div class="music_item">
+                                <p class="music_des">Debút</p>
+                                <p class="music_des">Mélanie Laurent</p>
+                                <p class="music_des">En t'attendant <div class="button_play"></div></p>
+                            </div>
+                            <div class="music_item">
+                                <p class="music_des">Debút</p>
+                                <p class="music_des">Mélanie Laurent</p>
+                                <p class="music_des">En t'attendant <div class="button_play"></div></p>
+                            </div>
+                            <div class="music_item">
+                                <p class="music_des">Debút</p>
+                                <p class="music_des">Mélanie Laurent</p>
+                                <p class="music_des">En t'attendant <div class="button_play"></div></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player music_container hidden">
 
                     <div class="music_picture"></div>
                     <p class="music_title">Titulo de la música</p>
                     <p class="music_artist">Artista de la música</p>
                     <div class="progress_container">
-                        <div class="progress"></div>
+                        <div id="progress"></div>
                     </div>
-                    <div class="music_buttons_container">
-                        <div class="music_buttons">
-                            <div id="music_previous" class="music_button"></div>
-                            <div id="music_play" class="music_button"></div>
-                            <div id="music_next" class="music_button"></div>
+                    <div class="player_buttons_container">
+                        <div class="player_buttons">
+                            <div id="player_previous" class="player_button"></div>
+                            <div id="player_play" class="player_button"></div>
+                            <div id="player_pause" class="player_button hidden"></div>
+                            <div id="player_next" class="player_button"></div>
                         </div>
                     </div>
 
@@ -191,9 +224,9 @@
         <script src="js/logoAnimation.js"></script>
         <script src="js/navegation.js"></script>
         <script src="js/mainPage.js"></script>
+        <script src="js/musicPage.js"></script>
         <script src="js/feelPage.js"></script>
         <script src="js/activitysPage.js"></script>
         <script src="js/howler.min.js"></script>
-        <script src="js/player.js"></script>
     </body>
 </html>
