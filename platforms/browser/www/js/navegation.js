@@ -16,7 +16,6 @@ function start() {
 }
 
 function initVariable() {
-
     route = [];
     pages = document.getElementsByClassName("page");
     tabs = document.getElementsByClassName("tab");
@@ -27,7 +26,7 @@ function initVariable() {
     closeIcon = document.getElementById("closeIcon");
     pageOpaque = document.getElementById("opaque");
     initFeels();
-
+    initPlayer();
 }
 
 function assingEvents(){
@@ -77,6 +76,7 @@ function assingEvents(){
     });
 
     assingMainOptions();
+    assingPlayerButtons();
     assingFeels();
 }
 

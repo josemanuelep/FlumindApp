@@ -1,5 +1,5 @@
 .entry {
-    background-image: linear-gradient(to top, #5ca3e6, #92aeee, #bcbaf4, #ddc8f8, #f7d8fc);
+    background: linear-gradient(to top, #5ca3e6, #92aeee, #bcbaf4, #ddc8f8, #f7d8fc);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@
 
 .circle { 
     position: absolute;
-    border-radius: 100%;    
+    border-radius: 100%;
 }
 
 .circle1 {    
