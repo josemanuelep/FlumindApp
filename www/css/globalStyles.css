@@ -13,6 +13,7 @@
 
 .opaque {
     background: #fff;
+    z-index: 2;
 }
 
 .menu_icon {
@@ -58,7 +59,7 @@
     width: 70%;
     right: -70%;
     transition: all .3s ease;
-    z-index: 2;
+    z-index: 3;
 }
 
 .menu_contain {
