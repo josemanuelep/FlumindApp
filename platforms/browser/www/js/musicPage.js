@@ -16,12 +16,14 @@ function initPlayer(){
             title: "hola",
             artist: "Fabian",
             album: "La u",
-            src: "musics/Ramon.mp3"
+            src: "musics/Ramon.mp3",
+            duration: "2.0908541666666665"
         },{
             title: "hola2",
             artist: "Fabian",
             album: "La u",
-            src: "musics/Creeper.mp3"
+            src: "musics/Creeper.mp3",
+            duration: "7.916166666666666"
         }
     ];
     musicList = document.getElementById("music_list");
@@ -65,9 +67,8 @@ function showMusics(){
         const pauseButton = document.getElementById(idPauseButton);
 
         playButton.addEventListener("click", function(){                    
-            musicIndex = idPlayButton.charAt(idPlayButton.length - 1); 
-            putMusic(songs[musicIndex].src);
-            playMusic();        
+            putMusic(idPlayButton.charAt(idPlayButton.length - 1));
+            playMusic(); 
         });
 
         pauseButton.addEventListener("click", function(){                       
@@ -77,14 +78,17 @@ function showMusics(){
     }
 }
 
-function putMusic(route){
-    /* if(player && musicIndex){
+function putMusic(index){
+    if(player){
         player.stop();
+        indexProgress = 0;
         noMusic(); 
-    }        */ 
+    }
+
+    musicIndex = index;
     
     player = new Howl({
-        src: [route]
+        src: [songs[index].src]
     });
     
 }
@@ -94,12 +98,12 @@ function playMusic(){
     var playButton = document.getElementById("button_player_"+musicIndex);
     var pauseButton = document.getElementById("button_pause_"+musicIndex);
     progress.style.width = "0%";
-    indexProgress = 0;
     playerButtons[2].className = "player_button";
     playerButtons[1].className = "player_button hidden";
     playButton.className = "small_button play_button hidden";
     pauseButton.className = "small_button pause_button";
-    var salto = 5/player.duration();
+    var salto = 5/songs[musicIndex].duration;
+    console.log("d:"+songs[musicIndex].duration);
     timeProgress = setInterval(function(){
         if(indexProgress > 99.9){
             clearInterval(timeProgress);
