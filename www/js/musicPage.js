@@ -119,9 +119,7 @@ function assingPlayerButtons(){
 
     playerButtons[3].addEventListener("click", function(){
         if(musicIndex < songs.length - 1) {
-            console.log(musicIndex);
             musicIndex = musicIndex + 1;
-            console.log(musicIndex);
             putMusic(musicIndex);
             changeToNextMusic();
         }

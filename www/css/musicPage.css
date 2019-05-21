@@ -110,14 +110,15 @@
 .progress_container {
     display: inline-block;
     margin-top: 18px;
-    background: #ccc;
+    background: linear-gradient(to right, #f7d8fc, #ddc8f8, #bcbaf4, #92aeee, #5ca3e6);
+    opacity: .7;
     border-radius: 5px;
     width: 91%;
     height: 4px;
 }
 
 #progress {
-    background: hotpink;
+    background: #ff98d1;
     border-radius: 5px;
     width: 0%;
     height: 4px;
