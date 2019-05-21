@@ -130,6 +130,9 @@ function assingPlayerButtons(){
     musicBtnBack.addEventListener("click", function(){
         views[1].className = "player music_container animated fadeOutRight";
         views[0].className = "music_container animated fadeInLeft";
+        setTimeout(function(){
+            views[0].className = "music_container";
+        }, 900);
         musicBtnBack.className = "hidden";
     });
 
