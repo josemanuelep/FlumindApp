@@ -91,7 +91,7 @@
     width: 100%;
 }
 
-.player .music_title {
+.player_music_info .music_title {
     margin-top: 10px;
     text-align: left;
     width: 90%;

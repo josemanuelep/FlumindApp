@@ -1,5 +1,7 @@
+var views = [];
 var player;
 var playerButtons = [];
+var infos = [];
 var songs = [];
 var musicList;
 var musicIndex;
@@ -8,6 +10,7 @@ var timeProgress;
 var indexProgress;
 
 function initPlayer(){
+    views = document.getElementsByClassName("music_container");
     playerButtons = document.getElementsByClassName("player_button");
     progress = document.getElementById("progress");
     indexProgress = 0;
@@ -27,6 +30,7 @@ function initPlayer(){
         }
     ];
     musicList = document.getElementById("music_list");
+    infos = document.getElementsByClassName("player_music_info");
 }
 
 function assingPlayerButtons(){
@@ -47,14 +51,15 @@ function showMusics(){
 
     for(var i = 0; i < songs.length; i++){
 
-        const idPlayButton = "button_player_"+i;
-        const idPauseButton = "button_pause_"+i;
+        const idInfoButton = "info_button_"+i;
+        const idPlayButton = "play_button_"+i;
+        const idPauseButton = "pause_button_"+i;
 
         var music = document.createElement('div');
         music.setAttribute('class', 'music_item');
 
         music.innerHTML = 
-        "<div class='music_info'>"+
+        "<div id='"+idInfoButton+"' class='music_info'>"+
             "<p class='music_des'>"+songs[i].title+"</p>"+
             "<p class='music_des'>"+songs[i].artist+"</p>"+
             "<p class='music_des'>"+songs[i].album+"</p>" +
@@ -63,8 +68,19 @@ function showMusics(){
         "<div id='"+idPauseButton+"' class='small_button pause_button hidden'></div>";        
         musicList.appendChild(music);
         
+        const infoButton = document.getElementById(idInfoButton);
         const playButton = document.getElementById(idPlayButton);
         const pauseButton = document.getElementById(idPauseButton);
+
+        infoButton.addEventListener("click", function(){
+
+            if(musicIndex != idPlayButton.charAt(idPlayButton.length - 1)){
+                musicIndex = idPlayButton.charAt(idPlayButton.length - 1);
+                putMusic(musicIndex);
+            }            
+            showPlayer();
+            
+        });
 
         playButton.addEventListener("click", function(){                    
             putMusic(idPlayButton.charAt(idPlayButton.length - 1));
@@ -80,8 +96,9 @@ function showMusics(){
 
 function putMusic(index){
     if(player){
-        player.stop();
+        player.stop();        
         indexProgress = 0;
+        progress.style.width = "0%";        
         noMusic(); 
     }
 
@@ -95,25 +112,24 @@ function putMusic(index){
 
 function playMusic(){
     player.play();    
-    var playButton = document.getElementById("button_player_"+musicIndex);
-    var pauseButton = document.getElementById("button_pause_"+musicIndex);
-    progress.style.width = "0%";
+    var playButton = document.getElementById("play_button_"+musicIndex);
+    var pauseButton = document.getElementById("pause_button_"+musicIndex);    
     playerButtons[2].className = "player_button";
     playerButtons[1].className = "player_button hidden";
     playButton.className = "small_button play_button hidden";
     pauseButton.className = "small_button pause_button";
     var salto = 5/songs[musicIndex].duration;
-    console.log("d:"+songs[musicIndex].duration);
     timeProgress = setInterval(function(){
-        if(indexProgress > 99.9){
-            clearInterval(timeProgress);
+        progress.style.width = indexProgress+"%";
+        indexProgress+=salto;
+        if(indexProgress > 102){            
             playerButtons[1].className = "player_button";
             playerButtons[2].className = "player_button hidden";
             playButton.className = "small_button play_button";
             pauseButton.className = "small_button pause_button hidden";
-        }
-        progress.style.width = indexProgress+"%";
-        indexProgress+=salto;
+            indexProgress = 0;    
+            clearInterval(timeProgress);        
+        }        
     }, 50);
 }
 
@@ -123,11 +139,23 @@ function pauseMusic(){
 }
 
 function noMusic(){
-    var playButton = document.getElementById("button_player_"+musicIndex);
-    var pauseButton = document.getElementById("button_pause_"+musicIndex);
+    var playButton = document.getElementById("play_button_"+musicIndex);
+    var pauseButton = document.getElementById("pause_button_"+musicIndex);
     playButton.className = "small_button play_button";
     pauseButton.className = "small_button pause_button hidden";
     playerButtons[1].className = "player_button";
     playerButtons[2].className = "player_button hidden";    
     clearInterval(timeProgress);
+}
+
+function showPlayer(){
+
+    infos[1].innerHTML = "";
+    infos[1].appendChild(document.createTextNode(songs[musicIndex].title));
+
+    infos[2].innerHTML = "";
+    infos[2].appendChild(document.createTextNode(songs[musicIndex].artist));
+
+    views[0].className = "music_container animated fadeOutLeft";
+    views[1].className = "player music_container animated fadeInRight";
 }
