@@ -13,10 +13,9 @@
     width: 98%;
 }
 
-.player .music_container {
-    margin-top: 57%;
+.player {
+    margin-top: 53.5%;
     overflow-y: hidden;
-    height: 51%;
 }
 
 .music_list {
@@ -77,10 +76,12 @@
 
 .music_picture {
     display: inline-block;
-    background: turquoise;
     border-radius: 100%;
     width: 200px;
     height: 200px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
 
 .music_title {
@@ -91,8 +92,8 @@
     width: 100%;
 }
 
-.player_music_info .music_title {
-    margin-top: 10px;
+.player .music_title {
+
     text-align: left;
     width: 90%;
 }

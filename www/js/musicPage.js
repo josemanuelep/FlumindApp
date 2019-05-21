@@ -20,12 +20,14 @@ function initPlayer(){
             artist: "Fabian",
             album: "La u",
             src: "musics/Ramon.mp3",
+            picture: "musics/img/Ramon.jpg",
             duration: "2.0908541666666665"
         },{
             title: "hola2",
-            artist: "Fabian",
+            artist: "Fabian S",
             album: "La u",
             src: "musics/Creeper.mp3",
+            picture: "musics/img/Ramon.jpg",
             duration: "7.916166666666666"
         }
     ];
@@ -35,12 +37,28 @@ function initPlayer(){
 
 function assingPlayerButtons(){
 
+    playerButtons[0].addEventListener("click", function(){
+        if(musicIndex > 0) {
+            musicIndex -= 1;
+            putMusic(musicIndex);
+            changeToPreviousMusic();
+        }
+    });
+
     playerButtons[1].addEventListener("click", function(){
         playMusic();
     });
 
     playerButtons[2].addEventListener("click", function(){
         pauseMusic();
+    });
+
+    playerButtons[3].addEventListener("click", function(){
+        if(musicIndex < songs.length - 1) {
+            musicIndex += 1;
+            putMusic(musicIndex);
+            changeToNextMusic();
+        }
     });
 
     showMusics();
@@ -149,13 +167,35 @@ function noMusic(){
 }
 
 function showPlayer(){
+    editInfo();
+
+    views[0].className = "music_container animated fadeOutLeft";
+    views[1].className = "player music_container animated fadeInRight";
+}
+
+function changeToPreviousMusic(){
+    infos[0].className = "player_music_info music_picture animated fadeOutRight";
+    editInfo();
+    setTimeout(function(){
+        infos[0].className = "player_music_info music_picture animated fadeInLeft";
+    }, 400);
+}
+
+function changeToNextMusic(){
+    infos[0].className = "player_music_info music_picture animated fadeOutLeft";
+    editInfo();
+    setTimeout(function(){
+        infos[0].className = "player_music_info music_picture animated fadeInRight";
+    }, 400);
+}
+
+function editInfo(){
+    infos[0].style.background = "url("+songs[musicIndex].picture+")";
+    console.log(infos[0]);
 
     infos[1].innerHTML = "";
     infos[1].appendChild(document.createTextNode(songs[musicIndex].title));
 
     infos[2].innerHTML = "";
     infos[2].appendChild(document.createTextNode(songs[musicIndex].artist));
-
-    views[0].className = "music_container animated fadeOutLeft";
-    views[1].className = "player music_container animated fadeInRight";
 }
