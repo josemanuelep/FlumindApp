@@ -18,6 +18,17 @@
     overflow: hidden;
 }
 
+#music_back_button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('../img/regresar.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 10px;
+}
+
 .music_list {
     overflow-y: scroll;
     margin-top: 25px;

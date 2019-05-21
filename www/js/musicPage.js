@@ -8,6 +8,8 @@ var musicIndex;
 var progress;
 var timeProgress;
 var indexProgress;
+var musicBtnBack;
+var reproducing;
 
 function initPlayer(){
     views = document.getElementsByClassName("music_container");
@@ -94,22 +96,23 @@ function initPlayer(){
             picture: "musics/img/intro.jpg",
             duration: "99.2"
         }
-    ];
+    ];    
     musicList = document.getElementById("music_list");
     infos = document.getElementsByClassName("player_music_info");
+    musicBtnBack = document.getElementById("music_back_button");
 }
 
 function assingPlayerButtons(){
 
     playerButtons[0].addEventListener("click", function(){
         if(musicIndex > 0) {
-            musicIndex -= 1;
-            putMusic(musicIndex);
+            putMusic(musicIndex-1);
             changeToPreviousMusic();
         }
     });
 
     playerButtons[1].addEventListener("click", function(){
+        putMusic(musicIndex);
         playMusic();
     });
 
@@ -119,10 +122,15 @@ function assingPlayerButtons(){
 
     playerButtons[3].addEventListener("click", function(){
         if(musicIndex < songs.length - 1) {
-            musicIndex = musicIndex + 1;
-            putMusic(musicIndex);
+            putMusic(musicIndex+1);
             changeToNextMusic();
         }
+    });
+
+    musicBtnBack.addEventListener("click", function(){
+        views[1].className = "player music_container animated fadeOutRight";
+        views[0].className = "music_container animated fadeInLeft";
+        musicBtnBack.className = "hidden";
     });
 
     showMusics();
@@ -155,16 +163,13 @@ function showMusics(){
         const pauseButton = document.getElementById(idPauseButton);
 
         infoButton.addEventListener("click", function(){
-
-            if(musicIndex != idPlayButton.charAt(idPlayButton.length - 1)){
-                musicIndex = parseInt(idPlayButton.charAt(idPlayButton.length - 1));
-                putMusic(musicIndex);
-            }            
+            musicIndex = parseInt(idPlayButton.charAt(idPlayButton.length - 1));     
+            musicBtnBack.className = "";            
             showPlayer();
             
         });
 
-        playButton.addEventListener("click", function(){                    
+        playButton.addEventListener("click", function(){                   
             putMusic(parseInt(idPlayButton.charAt(idPlayButton.length - 1)));
             playMusic(); 
         });
@@ -193,6 +198,10 @@ function putMusic(index){
 }
 
 function playMusic(){
+    if(reproducing >= 0 && musicIndex != reproducing){
+        player.stop();
+        putMusic(musicIndex);        
+    }
     player.play();    
     var playButton = document.getElementById("play_button_"+musicIndex);
     var pauseButton = document.getElementById("pause_button_"+musicIndex);    
@@ -200,6 +209,8 @@ function playMusic(){
     playerButtons[1].className = "player_button hidden";
     playButton.className = "small_button play_button hidden";
     pauseButton.className = "small_button pause_button";
+    reproducing = musicIndex;
+    progress.style.visibility = "visible";
     var salto = 5/songs[musicIndex].duration;
     timeProgress = setInterval(function(){
         progress.style.width = indexProgress+"%";
@@ -221,8 +232,8 @@ function pauseMusic(){
 }
 
 function noMusic(){
-    var playButton = document.getElementById("play_button_"+musicIndex);
-    var pauseButton = document.getElementById("pause_button_"+musicIndex);
+    var playButton = document.getElementById("play_button_"+reproducing);
+    var pauseButton = document.getElementById("pause_button_"+reproducing);
     playButton.className = "small_button play_button";
     pauseButton.className = "small_button pause_button hidden";
     playerButtons[1].className = "player_button";
@@ -232,7 +243,15 @@ function noMusic(){
 
 function showPlayer(){
     editInfo();
-
+    playerButtons[2].className = "player_button";
+    playerButtons[1].className = "player_button hidden";
+    progress.style.visibility = "visible";
+    if(musicIndex != reproducing){
+        playerButtons[2].className = "player_button hidden";
+        playerButtons[1].className = "player_button";
+        clearInterval(timeProgress);
+        progress.style.visibility = "hidden";        
+    }
     views[0].className = "music_container animated fadeOutLeft";
     views[1].className = "player music_container animated fadeInRight";
 }
