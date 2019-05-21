@@ -16,19 +16,83 @@ function initPlayer(){
     indexProgress = 0;
     songs = [
         {
-            title: "hola",
-            artist: "Fabian",
-            album: "La u",
-            src: "musics/Ramon.mp3",
-            picture: "musics/img/Ramon.jpg",
-            duration: "2.0908541666666665"
+            title: "Début",
+            artist: "Mélanie Laurent",
+            album: "En t'attendant",
+            src: "musics/debut.mp3",
+            picture: "musics/img/debut.jpg",
+            duration: "161.2"
+        },
+        {
+            title: "Gaze",
+            artist: "Moux",
+            album: "Gaze",
+            src: "musics/gaze.mp3",
+            picture: "musics/img/gaze.jpg",
+            duration: "153.2"
         },{
-            title: "hola2",
-            artist: "Fabian S",
-            album: "La u",
-            src: "musics/Creeper.mp3",
-            picture: "musics/img/Ramon.jpg",
-            duration: "7.916166666666666"
+            title: "Strata",
+            artist: "Poppy Ackroyd",
+            album: "Sketches",
+            src: "musics/strata.mp3",
+            picture: "musics/img/strata.jpg",
+            duration: "273.3"
+        },
+        {
+            title: "Qi",
+            artist: "Phildel",
+            album: "Qi",
+            src: "musics/qi.mp3",
+            picture: "musics/img/qi.jpg",
+            duration: "319.8"
+        },
+        {
+            title: "Norrsken",
+            artist: "Karin Borg",
+            album: "Norrsken",
+            src: "musics/norrsken.mp3",
+            picture: "musics/img/norrsken.jpg",
+            duration: "95.6"
+        },
+        {
+            title: "Naive Spin",
+            artist: "Aaron Lansing",
+            album: "Naive Spin",
+            src: "musics/naive.mp3",
+            picture: "musics/img/naive.jpg",
+            duration: "156.3"
+        },
+        {
+            title: "Tallis one",
+            artist: "Samuel Lindon",
+            album: "Tallis one",
+            src: "musics/tallis.mp3",
+            picture: "musics/img/tallis.jpg",
+            duration: "125.2"
+        },
+        {
+            title: "Chasing stars",
+            artist: "Moux",
+            album: "Gaze",
+            src: "musics/chasing.mp3",
+            picture: "musics/img/chasing.jpg",
+            duration: "142.6"
+        },
+        {
+            title: "Time",
+            artist: "Poppy Ackroyd",
+            album: "Sketches",
+            src: "musics/time.mp3",
+            picture: "musics/img/time.jpg",
+            duration: "351.8"
+        },
+        {
+            title: "Intro",
+            artist: "Black Elk",
+            album: "Sparks",
+            src: "musics/intro.mp3",
+            picture: "musics/img/intro.jpg",
+            duration: "99.2"
         }
     ];
     musicList = document.getElementById("music_list");
@@ -55,7 +119,9 @@ function assingPlayerButtons(){
 
     playerButtons[3].addEventListener("click", function(){
         if(musicIndex < songs.length - 1) {
-            musicIndex += 1;
+            console.log(musicIndex);
+            musicIndex = musicIndex + 1;
+            console.log(musicIndex);
             putMusic(musicIndex);
             changeToNextMusic();
         }
@@ -93,7 +159,7 @@ function showMusics(){
         infoButton.addEventListener("click", function(){
 
             if(musicIndex != idPlayButton.charAt(idPlayButton.length - 1)){
-                musicIndex = idPlayButton.charAt(idPlayButton.length - 1);
+                musicIndex = parseInt(idPlayButton.charAt(idPlayButton.length - 1));
                 putMusic(musicIndex);
             }            
             showPlayer();
@@ -101,7 +167,7 @@ function showMusics(){
         });
 
         playButton.addEventListener("click", function(){                    
-            putMusic(idPlayButton.charAt(idPlayButton.length - 1));
+            putMusic(parseInt(idPlayButton.charAt(idPlayButton.length - 1)));
             playMusic(); 
         });
 
@@ -174,24 +240,23 @@ function showPlayer(){
 }
 
 function changeToPreviousMusic(){
-    infos[0].className = "player_music_info music_picture animated fadeOutRight";
-    editInfo();
+    infos[0].className = "player_music_info music_picture animated fadeOutRight";    
     setTimeout(function(){
+        editInfo();
         infos[0].className = "player_music_info music_picture animated fadeInLeft";
     }, 400);
 }
 
 function changeToNextMusic(){
     infos[0].className = "player_music_info music_picture animated fadeOutLeft";
-    editInfo();
     setTimeout(function(){
+        editInfo();
         infos[0].className = "player_music_info music_picture animated fadeInRight";
     }, 400);
 }
 
 function editInfo(){
     infos[0].style.background = "url("+songs[musicIndex].picture+")";
-    console.log(infos[0]);
 
     infos[1].innerHTML = "";
     infos[1].appendChild(document.createTextNode(songs[musicIndex].title));
