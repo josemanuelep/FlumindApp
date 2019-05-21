@@ -15,7 +15,7 @@
 
 .player {
     margin-top: 53.5%;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .music_list {
