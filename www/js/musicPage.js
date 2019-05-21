@@ -106,7 +106,7 @@ function assingPlayerButtons(){
 
     playerButtons[0].addEventListener("click", function(){
         if(musicIndex > 0) {
-            putMusic(musicIndex-1);
+            musicIndex -= 1;
             changeToPreviousMusic();
         }
     });
@@ -122,7 +122,7 @@ function assingPlayerButtons(){
 
     playerButtons[3].addEventListener("click", function(){
         if(musicIndex < songs.length - 1) {
-            putMusic(musicIndex+1);
+            musicIndex += 1;
             changeToNextMusic();
         }
     });
@@ -242,6 +242,28 @@ function noMusic(){
 }
 
 function showPlayer(){
+    changeMusic();
+    views[0].className = "music_container animated fadeOutLeft";
+    views[1].className = "player music_container animated fadeInRight";
+}
+
+function changeToPreviousMusic(){
+    infos[0].className = "player_music_info music_picture animated fadeOutRight";    
+    setTimeout(function(){
+        changeMusic();
+        infos[0].className = "player_music_info music_picture animated fadeInLeft";
+    }, 400);
+}
+
+function changeToNextMusic(){
+    infos[0].className = "player_music_info music_picture animated fadeOutLeft";
+    setTimeout(function(){
+        changeMusic();
+        infos[0].className = "player_music_info music_picture animated fadeInRight";
+    }, 400);
+}
+
+function changeMusic(){
     editInfo();
     playerButtons[2].className = "player_button";
     playerButtons[1].className = "player_button hidden";
@@ -252,24 +274,6 @@ function showPlayer(){
         clearInterval(timeProgress);
         progress.style.visibility = "hidden";        
     }
-    views[0].className = "music_container animated fadeOutLeft";
-    views[1].className = "player music_container animated fadeInRight";
-}
-
-function changeToPreviousMusic(){
-    infos[0].className = "player_music_info music_picture animated fadeOutRight";    
-    setTimeout(function(){
-        editInfo();
-        infos[0].className = "player_music_info music_picture animated fadeInLeft";
-    }, 400);
-}
-
-function changeToNextMusic(){
-    infos[0].className = "player_music_info music_picture animated fadeOutLeft";
-    setTimeout(function(){
-        editInfo();
-        infos[0].className = "player_music_info music_picture animated fadeInRight";
-    }, 400);
 }
 
 function editInfo(){
