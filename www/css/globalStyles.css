@@ -291,6 +291,11 @@
     color: #ff98d1;
 }
 
+.text_center_top {
+    margin-top: 60% !important;
+    color: #fff;
+}
+
 @font-face {
     font-family: "Open Sans Condensed light";
     src: url('../fonts/OpenSansCondensed-Light.ttf');
