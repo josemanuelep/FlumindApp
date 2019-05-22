@@ -7,6 +7,7 @@ var curved;
 var menu;
 var menuIcon;
 var closeIcon;
+var backIcon;
 var pageOpaque;
 var contactButton;
 var infoButton;
@@ -24,8 +25,9 @@ function initVariable() {
     curved = document.getElementById("curved");
     tabActivated = 0;
     menu = document.getElementById("menu");
-    menuIcon = document.getElementById("buttonMenu");
+    menuIcon = document.getElementById("buttonMenu");    
     closeIcon = document.getElementById("closeIcon");
+    backIcon = document.getElementById("buttonBack");
     pageOpaque = document.getElementById("opaque");
     contactButton = document.getElementById("contact_button");
     infoButton = document.getElementById("info_button");
@@ -44,6 +46,7 @@ function assingEvents(){
         if(tabActivated != 0){
             cleanPages();
             cleanTabs();
+            backIcon.className = "";
             tabActivated = 0;
             curved.className = "curved curved_home";
             tabs[0].className = "tab tab1_actived animated slideInUp";
@@ -54,6 +57,7 @@ function assingEvents(){
         if(tabActivated != 1){
             cleanPages();
             changedTab(14);
+            backIcon.className = "";
             tabActivated = 1;
             curved.className = "curved curved_music";
             tabs[1].className = "tab tab2_actived animated slideInUp";
@@ -64,6 +68,7 @@ function assingEvents(){
         if(tabActivated != 2){
             cleanPages();
             changedTab(15);
+            backIcon.className = "";
             tabActivated = 2;
             curved.className = "curved curved_time";
             tabs[2].className = "tab tab3_actived animated slideInUp";
@@ -74,9 +79,19 @@ function assingEvents(){
         if(tabActivated != 3){
             cleanPages();
             changedTab(16);
+            backIcon.className = "";
             tabActivated = 3;
             curved.className = "curved curved_contact";
             tabs[3].className = "tab tab4_actived animated slideInUp";
+        }
+    });
+
+    backIcon.addEventListener("click", function(){
+        var index = route.length - 1;
+        pages[route[index]].className = "page animated slideOutRight delay-300ms";
+        route.pop();
+        if(index <= 1){
+            backIcon.className = "";
         }
     });
 
@@ -85,6 +100,7 @@ function assingEvents(){
             closeMenu();
             cleanPages();
             changedTab(16);
+            backIcon.className = "";
             tabActivated = 3;
             curved.className = "curved curved_contact";
             tabs[3].className = "tab tab4_actived animated slideInUp";
@@ -94,6 +110,7 @@ function assingEvents(){
     infoButton.addEventListener("click", function(){
         closeMenu();
         cleanPages();
+        backIcon.className = "";
         showPage(13);
     });
 
@@ -125,6 +142,9 @@ function closeMenu(){
 }
 
 function showPage(index){
+    if(index == 4){
+        backIcon.className = "back_icon page animated fadeIn delay-1s";
+    }
     route.push(index);
     pages[index].className = "page animated slideInRight delay-300ms";   
     curved.className = "curved curved_home animated fadeOut"; 

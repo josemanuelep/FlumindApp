@@ -28,6 +28,18 @@
     z-index: 2;
 }
 
+.back_icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 10px;
+    background: url('../img/regresar.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
 .close_icon {
     position: relative;
     width: 40px;
