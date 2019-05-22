@@ -1,7 +1,11 @@
 var activitys;
+var steps;
+var stepButtons;
 
 function initActivitys(){
 	activitys = document.getElementsByClassName("activity");
+	steps = document.getElementsByClassName("true_step");
+	stepButtons = document.getElementsByClassName("step_button");
 }
 
 function assingActivitys(){
@@ -28,6 +32,39 @@ function assingActivitys(){
 		if(feelSelected == 0){
 			showPage(8);
 		}
+	});
+
+	steps[0].addEventListener("click", function(){
+		showPage(9);
+	});
+
+	steps[1].addEventListener("click", function(){
+		showPage(10);
+	});
+
+	steps[2].addEventListener("click", function(){
+		showPage(11);
+	});
+
+	steps[3].addEventListener("click", function(){
+		showPage(12);
+	});
+
+	stepButtons[0].addEventListener("click", function(){
+		showPage(10);
+	});
+
+	stepButtons[1].addEventListener("click", function(){
+		showPage(11);
+	});
+
+	stepButtons[2].addEventListener("click", function(){		
+		showPage(12);
+	});
+
+	stepButtons[3].addEventListener("click", function(){
+		cleanPages();
+		showPage(4);
 	});
 
 }
