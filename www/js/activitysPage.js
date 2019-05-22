@@ -64,6 +64,7 @@ function assingActivitys(){
 
 	stepButtons[3].addEventListener("click", function(){
 		cleanPages();
+		showPage(3);
 		showPage(4);
 	});
 
