@@ -1,0 +1,110 @@
+.steps {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.step {
+    background: #8193d2;    
+    height: 48px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.steps .step1 {
+    width: 47%;
+}
+
+.steps .step2 {
+    width: 62%;
+}
+
+.steps .step3 {
+    width: 77%;
+}
+
+.steps .step4 {
+    width: 90%;
+}
+
+.steps .step_icon {
+    width: 70px;
+    height: 70%;
+    background: url('../img/actividades/prechequeo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.steps .step_name {
+    font-family: "Roboto light";
+    color: #fff;
+    font-size: 22px;
+}
+
+.exercises_container {
+    width: 100%;
+    text-align: center;
+    margin-top: 17px;
+}
+
+.exercises_container .exercises {
+    display: inline-block;    
+    width: 92%;
+    height: 200px;
+}
+
+.exercises .exercise_item {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    justify-content: space-around;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+}
+
+.exercise_desc {
+    font-family: "Open Sans Condensed light";
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    width: 50%;
+}
+
+.art_exercise_desc {
+    text-align: left;
+}
+
+.art_item_title {
+    width: 45%;
+    margin-left: 20px;
+}
+
+.art_item_des {
+    width: 55%;
+}
+
+.advice {
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: transparent;
+}
+
+.advice_icon {
+    width: 31px;
+    height: 30px;
+    background: url(../img/actividades/item.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.advice_text {
+    font-size: 17px;
+    font-family: "Roboto light";
+    margin-left: 17px;
+    text-align: left;
+    color: #fff;
+}

@@ -133,8 +133,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    position: absolute;
-    z-index: 2;
 }
 
 .option {
@@ -158,27 +156,29 @@
     background: linear-gradient(to top, #5ca3e6, #92aeee, #bcbaf4, #ddc8f8, #f7d8fc);
 }
 
+.abstract {
+    position: absolute;    
+    top: 0;
+    height: 40%;
+    left: 0;
+    width: 100%;    
+    background-repeat: no-repeat !important;
+    background-position-x: left !important;
+    z-index: 0;
+}
+
 .abstract1 {
     background: url('../img/nubes1.svg');
 }
 
 .abstract2 {
     background: url('../img/nubes2.svg');
+    height: 30%;
 }
 
 .abstract3 {
     background: url('../img/nubes3.svg');
-}
-
-.abstract {
-    position: absolute;    
-    top: 0;
-    height: 50%;
-    left: 0;
-    width: 100%;    
-    background-repeat: no-repeat;
-    background-position-x: left;
-    z-index: 0;
+    height: 20%;
 }
 
 .tabs {
@@ -274,6 +274,21 @@
 
 .hidden {
     display: none !important;
+}
+
+.bottom_advice {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-family: "Roboto light";
+    font-style: italic;
+    font-size: 13px;
+    bottom: 52px;
+    width: 100%;
+}
+
+.stand_out {
+    color: #ff98d1;
 }
 
 @font-face {
