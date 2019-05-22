@@ -5,6 +5,27 @@
     text-align: center;
 }
 
+.activity_title {
+    margin-top: 32%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.activity_title .main_title {
+    width: auto;
+    font-size: 35px;
+    font-weight: 100;
+    color: #fff;
+}
+
+.activity_title .feel_selected {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
 .feel_selected {
     display: inline-block;
     width: 40px;

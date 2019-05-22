@@ -30,6 +30,7 @@ function initVariable() {
     contactButton = document.getElementById("contact_button");
     infoButton = document.getElementById("info_button");
     initFeels();
+    initActivitys();
     initPlayer();
 }
 
@@ -52,7 +53,7 @@ function assingEvents(){
     tabs[1].addEventListener("click", function(){
         if(tabActivated != 1){
             cleanPages();
-            changedTab(6);
+            changedTab(14);
             tabActivated = 1;
             curved.className = "curved curved_music";
             tabs[1].className = "tab tab2_actived animated slideInUp";
@@ -62,7 +63,7 @@ function assingEvents(){
     tabs[2].addEventListener("click", function(){
         if(tabActivated != 2){
             cleanPages();
-            changedTab(7);
+            changedTab(15);
             tabActivated = 2;
             curved.className = "curved curved_time";
             tabs[2].className = "tab tab3_actived animated slideInUp";
@@ -72,7 +73,7 @@ function assingEvents(){
     tabs[3].addEventListener("click", function(){
         if(tabActivated != 3){
             cleanPages();
-            changedTab(8);
+            changedTab(16);
             tabActivated = 3;
             curved.className = "curved curved_contact";
             tabs[3].className = "tab tab4_actived animated slideInUp";
@@ -83,7 +84,7 @@ function assingEvents(){
         if(tabActivated != 3){
             closeMenu();
             cleanPages();
-            changedTab(8);
+            changedTab(16);
             tabActivated = 3;
             curved.className = "curved curved_contact";
             tabs[3].className = "tab tab4_actived animated slideInUp";
@@ -93,12 +94,13 @@ function assingEvents(){
     infoButton.addEventListener("click", function(){
         closeMenu();
         cleanPages();
-        showPage(5);
+        showPage(13);
     });
 
     assingMainOptions();
     assingPlayerButtons();
     assingFeels();
+    assingActivitys();
 }
 
 function loadMainPage() {
@@ -164,7 +166,7 @@ function cleanPages(){
         }
         route = [];
     }else {
-        for(let i = 6; i < 6 + tabActivated ; i++){   
+        for(let i = 14; i < 14 + tabActivated ; i++){   
             pages[i].style.zIndex = '0';        
             pages[i].className = "page animated slideOutDown";
         }

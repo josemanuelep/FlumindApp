@@ -1,22 +1,25 @@
-function assingFeelIcon(){
-	let feel_selected = document.getElementById("feel_selected");
+var activitys;
 
-    switch(feelSelected){
-    	case 0: 
-    		feel_selected.style.background = "url('img/sentimientos/enojoIcon.svg')";
-    		break;
+function initActivitys(){
+	activitys = document.getElementsByClassName("activity");
+}
 
-    	case 1: 
-    		feel_selected.style.background = "url('img/sentimientos/tristezaIcon.svg')";
-    		break;
+function assingActivitys(){
+	
+	activitys[0].addEventListener("click", function(){
+		showPage(5);
+	});
 
-    	case 2: 
-    		feel_selected.style.background = "url('img/sentimientos/estresIcon.svg')";
-    		break;
+	activitys[1].addEventListener("click", function(){
+		showPage(6);
+	});
 
-    	case 3: 
-    		feel_selected.style.background = "url('img/sentimientos/miedoIcon.svg')";
-    		break;
-    }
+	activitys[2].addEventListener("click", function(){
+		showPage(7);
+	});
+
+	activitys[3].addEventListener("click", function(){
+		showPage(8);
+	});
 
 }

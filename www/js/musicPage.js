@@ -112,7 +112,9 @@ function assingPlayerButtons(){
     });
 
     playerButtons[1].addEventListener("click", function(){
-        putMusic(musicIndex);
+        if(!player){
+            putMusic(musicIndex);
+        }
         playMusic();
     });
 
