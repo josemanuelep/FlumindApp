@@ -87,10 +87,9 @@ function assingEvents(){
     });
 
     backIcon.addEventListener("click", function(){
-        var index = route.length - 1;
-        pages[route[index]].className = "page animated slideOutRight delay-300ms";
+        pages[route[route.length - 1]].className = "page animated slideOutRight delay-300ms";
         route.pop();
-        if(index <= 1){
+        if(route.length <= 1){
             backIcon.className = "";
         }
     });

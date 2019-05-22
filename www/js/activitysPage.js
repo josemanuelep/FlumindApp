@@ -7,19 +7,27 @@ function initActivitys(){
 function assingActivitys(){
 	
 	activitys[0].addEventListener("click", function(){
-		showPage(5);
+		if(feelSelected == 0){
+			showPage(5);
+		}
 	});
 
 	activitys[1].addEventListener("click", function(){
-		showPage(6);
+		if(feelSelected == 0){
+			showPage(6);
+		}
 	});
 
 	activitys[2].addEventListener("click", function(){
-		showPage(7);
+		if(feelSelected == 0){
+			showPage(7);
+		}
 	});
 
 	activitys[3].addEventListener("click", function(){
-		showPage(8);
+		if(feelSelected == 0){
+			showPage(8);
+		}
 	});
 
 }
