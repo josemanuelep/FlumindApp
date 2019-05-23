@@ -2,12 +2,14 @@ var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
 var horas = 0;
+var iniciar = document.getElementById("inicio");
+var parar = document.getElementById("parar");
+iniciar.addEventListener("click", inicio);
+parar.addEventListener("click", parar);
+
 function inicio () {
 	control = setInterval(cronometro,10);
-	document.getElementById("inicio").disabled = true;
-	document.getElementById("parar").disabled = false;
-	document.getElementById("continuar").disabled = true;
-	document.getElementById("reinicio").disabled = false;
+	
 }
 function parar () {
 	clearInterval(control);
@@ -33,7 +35,7 @@ function cronometro () {
 	if (centesimas < 99) {
 		centesimas++;
 		if (centesimas < 10) { centesimas = "0"+centesimas }
-		Centesimas.innerHTML = ":"+centesimas;
+	
 	}
 	if (centesimas == 99) {
 		centesimas = -1;
