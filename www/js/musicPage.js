@@ -252,7 +252,7 @@ function showPlayer(){
     views[1].className = "player music_container animated fadeInRight";
 }
 
-function changeToPreviousMusic(){
+function    changeToPreviousMusic(){
     infos[0].className = "player_music_info music_picture animated fadeOutRight";    
     setTimeout(function(){
         changeMusic();
