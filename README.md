@@ -24,9 +24,9 @@ Queremos que las personas aprendan a manejar sus emociones por medio de :
 
 ## Desarrolladores 💪
 
-> José Manuel Echeverri Palacio (Programador)
-> Fabian Serna (Programador)
-> Manuela Giraldo (Diseñadora)
+* José Manuel Echeverri Palacio (Programador)
+* Fabian Serna (Programador)
+* Manuela Giraldo (Diseñadora)
 
 ## Presentación donde hablamos mas detalladamente de la aplicación
 
