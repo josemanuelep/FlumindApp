@@ -3,18 +3,24 @@ var segundos = 0;
 var minutos = 0;
 var horas = 0;
 var iniciar = document.getElementById("inicio");
-var parar = document.getElementById("parar");
+var detener = document.getElementById("parar");
 iniciar.addEventListener("click", inicio);
-parar.addEventListener("click", parar);
+detener.addEventListener("click", parar);
+var imageUrlParar= "URL OF THE IMAGE HERE";
+var imageUrliniciar= "URL OF THE IMAGE HERE";
+var imageUrlPararPresionado ="";
+var imageUrliniciarPresionado= "URL OF THE IMAGE HERE";
+
 
 function inicio () {
 	control = setInterval(cronometro,10);
-	
+	iniciar.style.backgroundImage=imageUrlParar;
 }
 function parar () {
 	clearInterval(control);
 	document.getElementById("parar").disabled = true;
-	document.getElementById("continuar").disabled = false;
+    document.getElementById("inicio").disabled = false;
+    
 }
 function reinicio () {
 	clearInterval(control);
