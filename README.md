@@ -31,6 +31,7 @@ Queremos que las personas aprendan a manejar sus emociones por medio de :
 > https://howlerjs.com/
 * Grunt para limpiar el proyecto
 * GitKraken 
+* Diseño en ilustrator
 
 
 ## Desarrolladores 💪
