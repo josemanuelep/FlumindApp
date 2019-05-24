@@ -21,6 +21,17 @@ Queremos que las personas aprendan a manejar sus emociones por medio de :
 * Posiblemente otras funciones (La aplicacion esta en desarrollo)
 
 
+## Herramientas de desarrollo :octocat:
+
+* Apache Cordova
+* HTML5
+* CSS3
+* Vanilla Javascript
+* Howler.js 
+> https://howlerjs.com/
+* Grunt para limpiar el proyecto
+* GitKraken 
+
 
 ## Desarrolladores 💪
 
