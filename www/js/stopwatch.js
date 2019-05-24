@@ -5,37 +5,34 @@ var horas = 0;
 var iniciar = document.getElementById("inicio");
 var detener = document.getElementById("parar");
 iniciar.addEventListener("click", inicio);
-detener.addEventListener("click", parar);
-var imageUrlParar= "URL OF THE IMAGE HERE";
-var imageUrliniciar= "URL OF THE IMAGE HERE";
-var imageUrlPararPresionado ="";
-var imageUrliniciarPresionado= "URL OF THE IMAGE HERE";
+detener.addEventListener("click", reinicio);
+var imageUrlParar= "url(img/cancelar.svg)";
+var imageUrliniciar= "url(img/iniciar.svg)";
+var imageUrlPararPresionado ="url(img/cancelar_oprimido.svg)";
+var imageUrliniciarPresionado= "url(img/iniciar_oprimido.svg)";
 
 
 function inicio () {
 	control = setInterval(cronometro,10);
-	iniciar.style.backgroundImage=imageUrlParar;
+	iniciar.style.backgroundImage=imageUrliniciarPresionado;
+	detener.style.backgroundImage=imageUrlParar;
 }
 function parar () {
 	clearInterval(control);
-	document.getElementById("parar").disabled = true;
-    document.getElementById("inicio").disabled = false;
+	detener.style.backgroundImage=imageUrlPararPresionado;
+	iniciar.style.backgroundImage=imageUrliniciar;
     
 }
 function reinicio () {
 	clearInterval(control);
-	centesimas = 0;
+	detener.style.backgroundImage=imageUrlPararPresionado;
+	iniciar.style.backgroundImage=imageUrliniciar;
 	segundos = 0;
 	minutos = 0;
 	horas = 0;
-	Centesimas.innerHTML = ":00";
 	Segundos.innerHTML = ":00";
 	Minutos.innerHTML = ":00";
 	Horas.innerHTML = "00";
-	document.getElementById("inicio").disabled = false;
-	document.getElementById("parar").disabled = true;
-	document.getElementById("continuar").disabled = true;
-	document.getElementById("reinicio").disabled = true;
 }
 function cronometro () {
 	if (centesimas < 99) {
