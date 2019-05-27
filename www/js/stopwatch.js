@@ -2,6 +2,8 @@ var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
 var horas = 0;
+var contadorInicio = 0 ;
+var contadorParar = 0;
 var iniciar = document.getElementById("inicio");
 var detener = document.getElementById("parar");
 iniciar.addEventListener("click", inicio);
@@ -11,19 +13,20 @@ var imageUrliniciar= "url(img/iniciar.svg)";
 var imageUrlPararPresionado ="url(img/cancelar_oprimido.svg)";
 var imageUrliniciarPresionado= "url(img/iniciar_oprimido.svg)";
 
-
 function inicio () {
+	contadorInicio++;
+	if(contadorInicio==1){
 	control = setInterval(cronometro,10);
 	iniciar.style.backgroundImage=imageUrliniciarPresionado;
 	detener.style.backgroundImage=imageUrlParar;
-}
-function parar () {
-	clearInterval(control);
-	detener.style.backgroundImage=imageUrlPararPresionado;
-	iniciar.style.backgroundImage=imageUrliniciar;
-    
+	contadorParar=0;
+	}
+	
 }
 function reinicio () {
+	contadorParar++;
+	if (contadorParar==1) {
+	contadorInicio = 0;
 	clearInterval(control);
 	detener.style.backgroundImage=imageUrlPararPresionado;
 	iniciar.style.backgroundImage=imageUrliniciar;
@@ -33,6 +36,7 @@ function reinicio () {
 	Segundos.innerHTML = ":00";
 	Minutos.innerHTML = ":00";
 	Horas.innerHTML = "00";
+	}
 }
 function cronometro () {
 	if (centesimas < 99) {
@@ -62,6 +66,6 @@ function cronometro () {
 	if ( (centesimas == 0)&&(segundos == 0)&&(minutos == 0) ) {
 		horas ++;
 		if (horas < 10) { horas = "0"+horas }
-		Horas.innerHTML = horas;
+		Horas.innerHTML = ":"+horas;
 	}
 }
