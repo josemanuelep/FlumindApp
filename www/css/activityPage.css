@@ -65,8 +65,9 @@
     display: flex;
     border-bottom: 1px solid rgba(255,255,255,.5);
     justify-content: space-around;
-    margin-bottom: 7px;
-    padding-bottom: 3px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    margin-top: 30px;
 }
 
 .exercise_desc {

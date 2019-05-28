@@ -120,6 +120,7 @@
     text-align: center;
     font-size: 15px;
     color: #fff;
+    padding: 10px;
 }
 
 .button_text {
@@ -136,7 +137,7 @@
 }
 
 .option {
-    margin-top: 10px;
+    margin-top: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,7 +165,7 @@
     width: 100%;    
     background-repeat: no-repeat !important;
     background-position-x: left !important;
-    z-index: 0;
+    z-index: -1;
 }
 
 .abstract1 {
