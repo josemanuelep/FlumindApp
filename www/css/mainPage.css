@@ -4,7 +4,8 @@
     height: 80px;
     top: 10px;
     left: 10px;
-    background: url('../img/logo.svg');
+    background: url('../img/logoB.png');
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
