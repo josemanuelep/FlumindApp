@@ -1,16 +1,1 @@
-.logo {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    top: 10px;
-    left: 10px;
-    background: url('../img/logoB.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.main_desc {
-    margin-top: 67%;
-    padding: 0 15%;
-}
+.logo{position:absolute;width:80px;height:80px;top:10px;left:10px;background:url(../img/logoB.png);background-size:contain;background-repeat:no-repeat;background-position:center}.main_desc{margin-top:67%;padding:0 15%}
