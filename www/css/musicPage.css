@@ -113,6 +113,12 @@
     width: 90%;
 }
 
+.titleSolver{
+
+    padding-left: 12% !important;
+
+}
+
 .music_artist {
     display: inline-block;
     text-align: left;
