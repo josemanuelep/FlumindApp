@@ -1,7 +1,6 @@
-# Flumind 🍃
+# Flumind 🍃🍃🍃🍃
 
 > Te ayudamos a controlar tus emociones 😊
-
 
 
 ## ¿Por qué Flumind?
